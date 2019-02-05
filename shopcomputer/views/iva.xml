@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="shopcomputer_iva_action" name="IVA"
+                     res_model="shopcomputer.iva" />
+
+
+        <record id="ejercicio1_dato_view_iva" model="ir.ui.view">
+            <field name="name">Lista iva</field>
+            <field name="model">shopcomputer.iva</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="ejercicio1_dato_view_search" model="ir.ui.view">
+            <field name="name">Busqueda iva</field>
+            <field name="model">shopcomputer.iva</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                </search>
+            </field>
+        </record>
+        <menuitem name="shopcomputer" id="menu_iva" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_iva" sequence="10"/>
+        <menuitem name="IVA" id="menu_ivas" action="shopcomputer_iva_action" parent="menu_inicio" sequence="4"/>
+    </data>
+</odoo>

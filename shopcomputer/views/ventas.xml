@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="shopcomputer_ventas_action" name="Ventas"
+                     res_model="shopcomputer.ventas" />
+
+
+        <record id="ejercicio1_dato_view_ventas" model="ir.ui.view">
+            <field name="name">Lista ventas</field>
+            <field name="model">shopcomputer.ventas</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="cliente" />
+                    <field name="fecha" />
+                    <field name="articulo" />
+                    <field name="cantidad" />
+                    <field name="precio" />
+                    <field name="subtotal" />
+                    <field name="iva" />
+                    <field name="total" />
+                    <!--<field name="total" />-->
+                </tree>
+            </field>
+        </record>
+        <record id="ejercicio1_dato_view_search" model="ir.ui.view">
+            <field name="name">Busqueda ventas</field>
+            <field name="model">shopcomputer.ventas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cliente" />
+                    <field name="fecha" />
+                    <field name="articulo" />
+                    <field name="cantidad" />
+                    <field name="precio" />
+                    <field name="subtotal" />
+                    <field name="iva" />
+                    <field name="total" />
+                    <!--<field name="total" />-->
+                </search>
+            </field>
+        </record>
+        <menuitem name="shopcomputer" id="menu_clientes" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_clientes" sequence="10"/>
+        <menuitem name="Ventas" id="menu_ventas" action="shopcomputer_ventas_action" parent="menu_inicio" sequence="3"/>
+    </data>
+</odoo>

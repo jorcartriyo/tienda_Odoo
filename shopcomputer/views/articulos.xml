@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="shopcomputer_articulos_action" name="Articulos"
+                     res_model="shopcomputer.articulos" />
+
+
+        <record id="ejercicio1_dato_view_articulos" model="ir.ui.view">
+            <field name="name">Lista articulos</field>
+            <field name="model">shopcomputer.articulos</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="precio" />
+                    <field name="stock" />
+                    <field name="rebajado" />
+                </tree>
+            </field>
+        </record>
+        <record id="ejercicio1_dato_view_search" model="ir.ui.view">
+            <field name="name">Busqueda articulos</field>
+            <field name="model">shopcomputer.articulos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="precio" />
+                    <field name="stock" />
+                    <field name="rebajado" />
+                </search>
+            </field>
+        </record>
+        <menuitem name="shopcomputer" id="menu_clientes" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_clientes" sequence="10"/>
+        <menuitem name="Articulos" id="menu_articulos" action="shopcomputer_articulos_action" parent="menu_inicio" sequence="2"/>
+    </data>
+</odoo>
